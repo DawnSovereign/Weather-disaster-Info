@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Hiya</h1>
+<header>
+    <h1>Disaster Weather Information</h1>
+</header>
+<hr>
+<h3>Get information on everything weather-related like tornadoes, air quality, history of earthquakes, and general weather forecast.</h3>
+<br>
+<div class="centered">
+    <form action="{{ url_for('handle_selection') }}" method="POST">
+        <label for="weather-options">Select an option:</label>
+        <select id="weather-options" name="selected_option">
+            <option value="">Select...</option>
+            <option value="tornado">Tornado</option>
+            <option value="air_quality">Air Quality</option>
+            <option value="earthquakes">History of Earthquakes</option>
+            <option value="weather_forecast">General Weather Forecast</option>
+            <option value="all">All Options</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 </body>
 </html>
