@@ -1,32 +1,25 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>CST 205 APOD</title>
-      {{ bootstrap.load_css() }}
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality</title>
+    {{ bootstrap.load_css() }}
   </head>
-<body>
+  <body>
     <div class="container">
       <h1 class="mt-4">Air Quality</h1>
       {% if data %}
-      <!--Display data-->
-        {% for i in data %}
-          <div class="card">
-            <img src="{{i['url']}}" class="card-img-top rounded">
-            <div class="card-body">
-              <h5 class="card-title">{{i['title']}}</h5>
-              <p class="card-text">
-                {{i['explanation']}}
-              </p>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">{{ data['OZONE'] }} AQI</h2>
+            <h1 class="card-text">{{ data['AQI'] }}</h1>
+            <p class="card-text">Last updated: {{ data['updatedAt'] }}</p>
           </div>
         </div>
-        <br>
-      {% endfor %}
-    {% else %}
-      no data
-    {% endif %}
+      {% else %}
+        <p>No data available</p>
+      {% endif %}
     </div>
-</body>
+  </body>
 </html>

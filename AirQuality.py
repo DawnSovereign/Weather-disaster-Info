@@ -1,6 +1,5 @@
 from flask import Flask, render_template
-import requests
-
+import requests, _json
 from flask_bootstrap import Bootstrap5
 
 app = Flask(__name__)
@@ -12,17 +11,27 @@ payload = {
   'api_key': api_key
 }
 
-endpoint = 'https://api-dashboard.getambee.com/#/'
+endpoint = 'https://api.ambeedata.com/latest/by-lat-lng?lat=12&lng=77'
+
+
+try:
+    r = requests.get(endpoint, params=payload)
+    local = r.json()
+    ozone = local['OZONE']
+except Exception as e:
+    print('Error: ', e)
+
 
 @app.route('/')
 def main():
-    data = None
+    
     try:
         print('ran')
         r = requests.get(endpoint, params=payload)
         data = r.json()
-        # print(data)
+        
         print(data)
-    except Exception as e:
-        print('please try again', e)
+
+    except:
+        print('please try again')
     return render_template('Air.html', data=data) 
