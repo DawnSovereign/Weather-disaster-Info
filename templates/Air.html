@@ -1,12 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>CST 205 APOD</title>
+      {{ bootstrap.load_css() }}
+
+  </head>
 <body>
-    <h1></h1>
+    <div class="container">
+      <h1 class="mt-4">Air Quality</h1>
+      {% if data %}
+      <!--Display data-->
+        {% for i in data %}
+          <div class="card">
+            <img src="{{i['url']}}" class="card-img-top rounded">
+            <div class="card-body">
+              <h5 class="card-title">{{i['title']}}</h5>
+              <p class="card-text">
+                {{i['explanation']}}
+              </p>
+          </div>
+        </div>
+        <br>
+      {% endfor %}
+    {% else %}
+      no data
+    {% endif %}
+    </div>
 </body>
 </html>
