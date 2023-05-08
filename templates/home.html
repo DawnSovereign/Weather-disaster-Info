@@ -12,14 +12,14 @@
     <h1>Disaster Weather Information</h1>
 </header>
 <hr>
-<h3>Get information on everything weather-related like tornadoes, air quality, history of earthquakes, and general weather forecast.</h3>
+<h3>Get information on everything weather-related like wind information, air quality, history of earthquakes, and general weather forecast.</h3>
 <br>
 <div class="centered">
     <form action="{{ url_for('handle_selection') }}" method="POST">
         <label for="weather-options">Select an option:</label>
         <select id="weather-options" name="selected_option">
             <option value="">Select...</option>
-            <option value="tornado">Tornado</option>
+            <option value="wind">Wind</option>
             <option value="air_quality">Air Quality</option>
             <option value="earthquakes">History of Earthquakes</option>
             <option value="weather_forecast">General Weather Forecast</option>
