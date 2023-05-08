@@ -1,0 +1,18 @@
+#header{
+    justify-content: center;
+    display: flex;
+}
+img{
+    border-radius: 8px;
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+h1{
+    text-align: center;
+}
+.userinput{
+    text-align: center;
+}
