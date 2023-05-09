@@ -15,6 +15,7 @@ bootstrap = Bootstrap5(app)
 def home():
     return render_template("home.html")
 
+
 @app.route('/earthquakes', methods=['GET'])
 def earthquakes():
     start_date = '2023-05-01'
@@ -42,4 +43,16 @@ def earthquakes():
     magnitudes = [earthquake['magnitude'] for earthquake in earthquakes]
 
     return render_template('earthquakes.html', cities=cities, magnitudes=magnitudes)
+
+@app.route('/handle_selection', methods=['POST'])
+def handle_selection():
+    selected_option = request.form.get('selected_option')
+
+    if selected_option == 'earthquakes':
+        return redirect(url_for('earthquakes'))
+
+    return redirect(url_for('home'))
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
