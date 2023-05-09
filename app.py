@@ -41,15 +41,5 @@ def earthquakes():
     cities = [earthquake['place'] for earthquake in earthquakes]
     magnitudes = [earthquake['magnitude'] for earthquake in earthquakes]
 
-    return render_template('earthquakes.html', cities=cities, magnitudes=magnitudes, data=data)
-
-@app.route('/handle_selection', methods = ['GET', 'POST'])
-def handle_selection():
-    selected_option = request.form.get('selected_option')
-    
-    if selected_option == 'earthquakes':
-        return redirect(url_for('earthquakes'))
-
-    return redirect(url_for('home'))
-
+    return render_template('earthquakes.html', cities=cities, magnitudes=magnitudes)
 
