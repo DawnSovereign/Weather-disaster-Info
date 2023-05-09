@@ -29,7 +29,7 @@ def earthquakes():
 
     response = requests.get(url)
     data = response.json()
-    print(data)
+    # print(data)
 
     earthquakes = []
     features = data.get('features', [])
