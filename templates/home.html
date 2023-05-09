@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 <header>
@@ -25,7 +27,7 @@
             <option value="weather_forecast">General Weather Forecast</option>
             <option value="all">All Options</option>
         </select>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class = "button1">
     </form>
 </div>
 </body>
