@@ -26,17 +26,6 @@ def earthquakes():
     return render_template('earthquakes.html', cities=cities, magnitudes=magnitudes)
 
 
-
-
-
-# from flask import Flask, render_template, request, redirect, url_for
-# import requests
-# from flask_bootstrap import Bootstrap5
-
-
-# app = Flask(__name__)
-# bootstrap = Bootstrap5(app)
-
 # @app.route('/')
 # def home():
 #     return render_template("home.html")
@@ -46,16 +35,16 @@ def earthquakes():
 #     return render_template("tornado.html")
 
 # @app.route('/earthquakes', methods=['GET'])
+
+@app.route('/earthquakes', methods=['GET'])
 # def earthquakes():
 #     start_date = request.args.get('start_date')
 #     end_date = request.args.get('end_date')
-#     magnitude = request.args.get('magnitude')
-    
-#     url = f'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date}&endtime={end_date}&minmagnitude={magnitude}'
+#     url = f'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date}&endtime={end_date}&minmagnitude=5'
+
 #     response = requests.get(url)
 #     data = response.json()
-#     print(data)
-    
+
 #     earthquakes = []
 #     features = data.get('features', [])
 #     for feature in features:
@@ -68,7 +57,6 @@ def earthquakes():
 #     magnitudes = [earthquake['magnitude'] for earthquake in earthquakes]
 
 #     return render_template('earthquakes.html', cities=cities, magnitudes=magnitudes)
-
 
 # @app.route('/handle_selection', methods = ['GET', 'POST'])
 # def handle_selection():
