@@ -1,17 +1,18 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_bootstrap import Bootstrap5
-import urllib.request, json
-import json
-import os
+from forecast import ZipcodeForm, getForecastData
 import requests
-
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
+app.config['SECRET_KEY'] = 'csumb-otter'
+
+current_weather_api = '7c66fb6dc5b98966d3c9709307417f82'
+forecastinfo = None
 
 @app.route('/')
 def home():
     return render_template("home.html")
-
+### Functions for wind
 @app.route('/wind', methods=['GET', 'POST'])
 def wind():
     if request.method == 'POST':
@@ -31,16 +32,49 @@ def wind_info():
 
     return render_template("wind_info.html", weather_data=weather_data)
 
+## FUNCTIONS FOR FORECAST VIEW
+@app.route('/forecast', methods = ['GET', 'POST'])
+def forecast():
+    form = ZipcodeForm()
+    global forecastinfo
+    if form.validate_on_submit():
+        print('Form validated as submited')
+        try:
+            forecastinfo = getForecastData(form.user_zip.data)
+            print('About to attempt redirect')
+            return redirect('/forecast_view')
+        except Exception as e:
+            print("Error on running function: ", e)
+            return redirect('/') 
+    return render_template('forecastSearch.html', form = form)
+
+
+@app.route('/forecast_view', methods = ['GET', 'POST'])
+def forecastview():
+    if forecastinfo == None:
+        return redirect('/')
+    else: 
+        return render_template('forecastView.html', forecastinfo = forecastinfo)
+    # return render_template('forecastView.html', forecastinfo = forecastinfo)
+    
+
 @app.route('/handle_selection', methods=['POST'])
 def handle_selection():
     selected_option = request.form.get('selected_option')
 
     if selected_option == 'wind':
         return redirect(url_for('wind'))
-
+    if selected_option == 'tornado':
+        return redirect(url_for('tornado'))
+    if selected_option == 'weather_forecast':
+        return redirect(url_for('forecast'))
+    if selected_option == 'wind':
+        return redirect(url_for('wind'))
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
 
 
