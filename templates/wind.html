@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
+
+</head>
+<body>
+    <h1>Enter a city to get wind information</h1>
+    <form id="windCity">
+        <input type="button" value="Go back!" onclick="history.back()">
+       </form>
+    <hr>
+    <div class="center-form">
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city name">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+
+
