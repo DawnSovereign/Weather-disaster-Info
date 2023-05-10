@@ -12,7 +12,7 @@ forecastinfo = None
 @app.route('/')
 def home():
     return render_template("home.html")
-
+### Functions for wind
 @app.route('/wind', methods=['GET', 'POST'])
 def wind():
     if request.method == 'POST':
@@ -31,25 +31,8 @@ def wind_info():
     weather_data = response.json()
 
     return render_template("wind_info.html", weather_data=weather_data)
-@app.route('/wind', methods=['GET', 'POST'])
-def wind():
-    if request.method == 'POST':
-        city = request.form.get('city')
-        return redirect(url_for('wind_info', city=city))
 
-    return render_template("wind.html")
-
-@app.route('/wind_info')
-def wind_info():
-    api_key = '41d5f679408f743b97da7258b9457d56'
-    city = request.args.get('city', 'New York')
-    units = 'f'
-    url = f'http://api.weatherstack.com/current?access_key={api_key}&query={city}&units={units}'
-    response = request.get(url)
-    weather_data = response.json()
-
-    return render_template("wind_info.html", weather_data=weather_data)
-
+## FUNCTIONS FOR FORECAST VIEW
 @app.route('/forecast', methods = ['GET', 'POST'])
 def forecast():
     form = ZipcodeForm()
