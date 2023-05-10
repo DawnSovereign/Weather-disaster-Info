@@ -27,7 +27,7 @@ def wind_info():
     city = request.args.get('city', 'New York')
     units = 'f'
     url = f'http://api.weatherstack.com/current?access_key={api_key}&query={city}&units={units}'
-    response = request.get(url)
+    response = requests.get(url)
     weather_data = response.json()
 
     return render_template("wind_info.html", weather_data=weather_data)

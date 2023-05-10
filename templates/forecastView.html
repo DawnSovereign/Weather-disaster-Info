@@ -34,6 +34,8 @@
       class="card"
       style="width: 30rem; background-color: #333; color: white"
     >
+      <br>
+      <br>
       <h1 class="d-flex justify-content-center" style="margin-top: 10px">
         Weather Report
       </h1>
@@ -45,9 +47,8 @@
       />
       <div class="card-body">
         <h5 class="card-title text-center fs-1">
-          {{ forecastinfo['weather'][0]['icon']}}
+          {{ forecastinfo['name']}}
         </h5>
-        <p class="card-text text-center fs-4">{{forecastinfo['name']}}</p>
         <p class="card-text text-center fs-4">
           {{forecastinfo['weather'][0]['description']}}
         </p>
