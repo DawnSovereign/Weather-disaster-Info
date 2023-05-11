@@ -19,5 +19,6 @@
     <h3>Pressure: {{ weather_data.current.pressure }}</h3>
     <h3>Wind degree: {{ weather_data.current.wind_degree }}</h3>
     <h3>Weather description: {{ weather_data.current.weather_descriptions[0] }}</h3>
+    <img class="weather-icon" src="{{ weather_data.current.weather_icons[0] }}" alt="Weather icon">
 </body>
 </html>

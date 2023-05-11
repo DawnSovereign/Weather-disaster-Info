@@ -26,6 +26,14 @@ form input[type="submit"] {
     padding: 5px 10px;
     cursor: pointer;
 }
+
 #windCity {
     text-align: left;
+}
+
+.weather-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
 }
