@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wind Information</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
 </head>
 <body>
     <h1>Wind Information for {{ weather_data.location.name }}</h1>
-    <form>
+    <form id="windCity">
         <input type="button" value="Go back!" onclick="history.back()">
-       </form>
+    </form>
     <hr>
-    <p>Wind speed: {{ weather_data.current.wind_speed }} {{ weather_data.current.wind_dir }}</p>
-    <p>Weather description: {{ weather_data.current.weather_descriptions[0] }}</p>
-    <!-- <a href="{{ url_for('home') }}">Go back</a> -->
+    <h3>Wind speed: {{ weather_data.current.wind_speed }} {{ weather_data.current.wind_dir }}</h3>
+    <h3>Wind direction: {{ weather_data.current.wind_dir }}</h3>
+    <h3>Pressure: {{ weather_data.current.pressure }}</h3>
+    <h3>Wind degree: {{ weather_data.current.wind_degree }}</h3>
+    <h3>Weather description: {{ weather_data.current.weather_descriptions[0] }}</h3>
 </body>
 </html>
