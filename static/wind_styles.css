@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #84c6e0; 
+  }
+  
 center-form {
     display: flex;
     justify-content: center;
@@ -56,3 +62,16 @@ form input[type="text"] {
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
   }
+
+  #weather-options {
+    font-size: 15px; 
+}
+
+label[for="weather-options"] {
+    font-size: 25px;
+}
+
+#windCity input[type="button"] {
+    font-size: 15px;  
+    padding: 8px;  
+}
