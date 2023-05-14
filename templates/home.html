@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
+
 </head>
 <body>
 <header>
     <h1>Disaster Weather Information</h1>
 </header>
 <hr>
-<h3>Get information on everything weather-related like wind information, air quality, history of earthquakes, and general weather forecast.</h3>
+<h2>Get information on everything weather-related like wind information, air quality, history of earthquakes, and general weather forecast.</h2>
 <br>
 <div class="centered">
     <form action="{{ url_for('handle_selection') }}" method="POST">
@@ -25,7 +27,8 @@
             <option value="weather_forecast">General Weather Forecast</option>
             <option value="all">All Options</option>
         </select>
-        <input type="submit" value="Submit">
+        <button id="restartBtn" value="submit" type="submit" class="btn">Submit</button>
+
     </form>
 </div>
 </body>
