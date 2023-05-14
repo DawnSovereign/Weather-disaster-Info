@@ -1,8 +1,16 @@
-html, body {
+/* html, body {
     height: 100%;
     width: 100%;
+  } */
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     background: #84c6e0; 
-  }
+
+}
   
 center-form {
     display: flex;
@@ -75,3 +83,19 @@ label[for="weather-options"] {
     font-size: 15px;  
     padding: 8px;  
 }
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+#logo {
+    display: block;
+    margin: auto;
+}
+  
