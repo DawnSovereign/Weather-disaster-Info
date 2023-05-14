@@ -7,12 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
-
 </head>
 <body>
 <header>
     <h1>Disaster Weather Information</h1>
 </header>
+<main>
 <hr>
 <h2>Get information on everything weather-related like wind information, air quality, history of earthquakes, and general weather forecast.</h2>
 <br>
@@ -28,8 +28,18 @@
             <option value="all">All Options</option>
         </select>
         <button id="restartBtn" value="submit" type="submit" class="btn">Submit</button>
-
     </form>
 </div>
+</main>
+<footer>
+    <hr>
+    <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}">
+    <p>CST205  Multimedia Design & Programming. 2023Ⓒ
+      <br><strong>Disclaimer: </strong>
+      The information in this webpage is fictitious.
+      <br>
+      It is used for academic purposes only.
+    </p>
+  </footer>
 </body>
 </html>

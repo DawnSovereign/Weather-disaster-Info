@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
 </head>
 <body>
-    <h1>Wind Information for {{ weather_data.location.name }}</h1>
+    <header>
+        <h1>Wind Information for {{ weather_data.location.name }}</h1>
+        <hr>
+        <br>
+    </header>
     <form id="windCity">
         <input type="button" value="Go back!" onclick="history.back()">
     </form>
@@ -20,5 +24,15 @@
     <h3>Wind degree: {{ weather_data.current.wind_degree }}</h3>
     <h3>Weather description: {{ weather_data.current.weather_descriptions[0] }}</h3>
     <img class="weather-icon" src="{{ weather_data.current.weather_icons[0] }}" alt="Weather icon">
+    <footer>
+        <hr>
+        <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}">
+        <p>CST205  Multimedia Design & Programming. 2023Ⓒ
+          <br><strong>Disclaimer: </strong>
+          The information in this webpage is fictitious.
+          <br>
+          It is used for academic purposes only.
+        </p>
+      </footer>
 </body>
 </html>
