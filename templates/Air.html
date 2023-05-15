@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
     <title>Air Quality</title>
-    {{ bootstrap.load_css() }}
-  </head>
-  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
     <div class="container">
-      <h1 class="mt-4">Air Quality</h1>
-      {% if data %}
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">{{ data['city_name'] }}</h2>
-            <h3 class="card-subtitle mb-2 text-muted">{{ data['state_code'] }}, {{ data['country_code'] }}</h3>
-            <p class="card-text">AQI: {{ data['aqi'] }}</p>
-            <p class="card-text">O3: {{ data['o3'] }}</p>
-            <p class="card-text">PM2.5: {{ data['pm25'] }}</p>
-            <p class="card-text">Last updated: {{ data['ts'] }}</p>
-          </div>
+        <h1>Air Quality Information</h1>
+        <div>
+            <h2>City: {{ city }}</h2>
+            <h2>Country: {{ country }}</h2>
+            <h2>AQI: {{ aqi }}</h2>
+            <h2>PM2.5: {{ pm25 }}</h2>
         </div>
-      {% else %}
-        <p>No data available</p>
-      {% endif %}
     </div>
-  </body>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
 </html>
