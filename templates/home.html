@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
+=======
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+>>>>>>> Feature-1
 </head>
 <body>
 <header>
@@ -14,7 +19,11 @@
 </header>
 <main>
 <hr>
+<<<<<<< HEAD
 <h2>Get information on everything weather-related like wind information, air quality, history of earthquakes, and general weather forecast.</h2>
+=======
+<h3>Get information on everything weather-related like wind information, air quality, history of earthquakes, and general weather forecast.</h3>
+>>>>>>> Feature-1
 <br>
 <div class="centered">
     <form action="{{ url_for('handle_selection') }}" method="POST">
@@ -23,11 +32,14 @@
             <option value="">Select...</option>
             <option value="wind">Wind</option>
             <option value="air_quality">Air Quality</option>
-            <option value="earthquakes">History of Earthquakes</option>
+            <option value="earthquakes">Earthquakes</option>
             <option value="weather_forecast">General Weather Forecast</option>
-            <option value="all">All Options</option>
         </select>
+<<<<<<< HEAD
         <button id="restartBtn" value="submit" type="submit" class="btn">Submit</button>
+=======
+        <button type="submit" value="Submit" class ="button1">Submit</button>
+>>>>>>> Feature-1
     </form>
 </div>
 </main>
