@@ -16,11 +16,11 @@ def home():
     return render_template("home.html")
 
 
-@app.route('/earthquakes', methods=['GET'])
+@app.route('/earthquakes', methods=['GET', 'POST'])
 def earthquakes():
     start_date = '2023-05-01'
-    end_date = '2023-05-08'
-    magnitude = '5'
+    end_date = '2023-05-09'
+    magnitude = '4'
     # start_date = request.args.get('start_date')
     # end_date = request.args.get('end_date')
     # magnitude = request.args.get('magnitude')
