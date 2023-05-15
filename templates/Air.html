@@ -12,9 +12,12 @@
       {% if data %}
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title">{{ data['OZONE'] }} AQI</h2>
-            <h1 class="card-text">{{ data['AQI'] }}</h1>
-            <p class="card-text">Last updated: {{ data['updatedAt'] }}</p>
+            <h2 class="card-title">{{ data['city_name'] }}</h2>
+            <h3 class="card-subtitle mb-2 text-muted">{{ data['state_code'] }}, {{ data['country_code'] }}</h3>
+            <p class="card-text">AQI: {{ data['aqi'] }}</p>
+            <p class="card-text">O3: {{ data['o3'] }}</p>
+            <p class="card-text">PM2.5: {{ data['pm25'] }}</p>
+            <p class="card-text">Last updated: {{ data['ts'] }}</p>
           </div>
         </div>
       {% else %}
