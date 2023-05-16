@@ -2,17 +2,29 @@
 <html>
 <head>
     <title>Air Quality</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+     -->
+     {{bootstrap.load_css()}}
+
 </head>
 <body>
     <div class="container">
         <h1>Air Quality Information</h1>
-        <div>
-            <h2>City: {{ city }}</h2>
-            <h2>Country: {{ country }}</h2>
-            <h2>AQI: {{ aqi }}</h2>
-            <h2>PM2.5: {{ pm25 }}</h2>
+        <form method="GET" action="{{ url_for('search') }}">
+            <div class="mb-3">
+                <label for="locationInput" class="form-label">Location</label>
+                <input type="text" class="form-control" id="locationInput" name="location" placeholder="Enter location">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        {% if data %}
+        <div class="mt-4">
+            <h2>City: {{ data['city_name'] }}</h2>
+            <h2>Country: {{ data['country_code'] }}</h2>
+            <h2>AQI: {{ data['data'][0]['aqi'] }}</h2>
+            <h2>PM2.5: {{ data['data'][0]['pm25'] }}</h2>
         </div>
+        {% endif %}
     </div>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 </body>

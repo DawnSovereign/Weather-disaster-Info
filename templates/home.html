@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
+
+    <!-- <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+</head>
+<body>
+<header>
+    <h1>Disaster Weather Information</h1>
+</header>
+<main>
+<hr>
+<h2>Get information on everything weather-related like wind information, air quality, history of earthquakes, and general weather forecast.</h2>
+<br>
+<div class="centered">
+    <form action="{{ url_for('handle_selection') }}" method="POST">
+        <label for="weather-options">Select an option:</label>
+        <select id="weather-options" name="selected_option">
+            <option value="">Select...</option>
+            <option value="wind">Wind</option>
+            <option value="air_quality">Air Quality</option>
+            <option value="earthquakes">Earthquakes</option>
+            <option value="weather_forecast">General Weather Forecast</option>
+        </select>
+        <button id="restartBtn" value="submit" type="submit" class="btn">Submit</button>
+    </form>
+</div>
+</main>
+<footer>
+    <hr>
+    <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}">
+    <p>CST205  Multimedia Design & Programming. 2023Ⓒ
+      <br><strong>Disclaimer: </strong>
+      The information in this webpage is fictitious.
+      <br>
+      It is used for academic purposes only.
+    </p>
+  </footer>
+</body>
+</html>
