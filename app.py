@@ -71,9 +71,6 @@ def earthquakes():
     start_date = '2023-05-01'
     end_date = '2023-05-09'
     magnitude = '4'
-    # start_date = request.args.get('start_date')
-    # end_date = request.args.get('end_date')
-    # magnitude = request.args.get('magnitude')
     url = f'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date}&endtime={end_date}&minmagnitude={magnitude}'
 
 
