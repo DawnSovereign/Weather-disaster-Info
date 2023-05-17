@@ -109,15 +109,17 @@ def handle_selection():
         return redirect(url_for('tornado'))
     if selected_option == 'weather_forecast':
         return redirect(url_for('forecast'))
-    if selected_option == 'wind':
-        return redirect(url_for('wind'))
+    if selected_option == 'air_quality':
+        return redirect(url_for('Air'))
     if selected_option == 'earthquakes':
         return redirect(url_for('earthquakes'))
 
     return redirect(url_for('home'))
 
+
+
 @app.route('/Air')
-def home(): 
+def Air(): 
     return render_template('Air.html')
 
 @app.route('/search', methods=['GET'])
