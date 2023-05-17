@@ -5,11 +5,11 @@ CST-205
 ###
 May 16, 2023
 # Run the program
-This site is for providing a one stop location for information on wind, hurricanes, earthquakes, and weather forecast. The home page provides user a dropdown option menu to choose. When user selects and option, for example, General Weather Forecas, it will take users to forcast page where user is not able to enter zip code to find current weather. In this website, we included back button route, that will take users back to homepage to select any other option.
+This website serves as a comprehensive destination for obtaining information about wind, hurricanes, earthquakes, and weather forecasts. On the homepage, users are presented with a dropdown menu that offers a selection of options. For instance, if a user chooses "General Weather Forecast," they will be directed to a forecast page where they can enter a zip code to retrieve the current weather information. To enhance user navigation, a back button route has been implemented, allowing users to easily return to the homepage and choose a different option.
 
 Link to github: https://github.com/alopezCSUMB/CST205_Final_Project
 ###
 Link to Trello board: https://trello.com/b/MEwuGDzh/project-management
 
 # Future work
-This website is open to add any other Disaster Weather information including tornados, high temperature warning and wildfires.  
+In a future update, this website aims to expand its coverage by incorporating additional Disaster Weather information such as tornadoes, high temperature warnings, and wildfires. By including these additional features, the website will offer a more comprehensive and diverse range of information to its users. This expansion will ensure that users can access relevant and timely data related to various weather-related disasters, thereby enhancing their overall experience and keeping them better informed. 
