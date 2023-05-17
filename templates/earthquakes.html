@@ -3,21 +3,34 @@
   <head>
     <title>Earthquake Search</title>
     <!-- <link href="../static/css/style.css" rel ="stylesheet" type = "text/css"/> -->
-    <link href="../static/css/Earthquake.css" rel="stylesheet" type="text/css" />
-
+    {{bootstrap.load_css()}}
+    <link
+      href="../static/css/Earthquake.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      body {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        background: #84c6e0; 
+        margin-top: 5vh; 
+      }
+    </style>
   </head>
   <body>
+    <div style="margin-left: -5vw">
+      <a href="{{ url_for('home') }}"
+        ><button type="button" class="backbutton">Back Home</button></a
+      >
+    </div>
 
-    <a href="{{ url_for('home') }}"><button type="button" class="backbutton">Back Home</button></a>
-
-    
-    <div class = "mag"> 
-      <h1> Welcome to Earthquake Magnitude Search!</h1>
-    <form action="/earthquakes" method="GET" class = "form">
-    </form>
-  </div>
-    <div> 
-    {% if cities %}
+    <div class="mag">
+      <h1>Welcome to Earthquake Magnitude Search!</h1>
+      <form action="/earthquakes" method="GET" class="form"></form>
+    </div>
+    <div>
+      {% if cities %}
       <h2 class="result">Search Results</h2>
       <table>
         <tr>
@@ -25,14 +38,13 @@
           <th>Magnitude</th>
         </tr>
         {% for index in range(cities|length) %}
-          <tr>
-            <td>{{ cities[index] }}</td>
-            <td>{{ magnitudes[index] }}</td>
-          </tr>
+        <tr>
+          <td>{{ cities[index] }}</td>
+          <td>{{ magnitudes[index] }}</td>
+        </tr>
         {% endfor %}
       </table>
-    {% endif %}
-  </div>
-    
+      {% endif %}
+    </div>
   </body>
 </html>

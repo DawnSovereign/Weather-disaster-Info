@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {{bootstrap.load_css()}}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
-
     <!-- <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <style>
+        body{
+            margin-left: 10vw;
+            margin-right: 10vw;
+            margin-top: 5vh;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -33,15 +42,19 @@
     </form>
 </div>
 </main>
+<div class="centered">
+
 <footer>
     <hr>
-    <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}">
+    <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}" >
     <p>CST205  Multimedia Design & Programming. 2023Ⓒ
       <br><strong>Disclaimer: </strong>
       The information in this webpage is fictitious.
       <br>
       It is used for academic purposes only.
     </p>
-  </footer>
+
+</footer>
+</div>
 </body>
 </html>
