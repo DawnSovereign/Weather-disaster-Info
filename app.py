@@ -1,3 +1,24 @@
+# Tittle: Saster - Disaster Weather Information
+# Authors: Ruben Tafoya, Dylan Uribe, Aurelio Lopez, Jason Kim 
+# Course: CST 205 - Multimedia Design & Programming
+# Date: May 17, 2023
+# Abtract: 
+# This website serves as a comprehensive destination for obtaining information about wind, hurricanes, 
+# earthquakes, and weather forecasts. On the homepage, users are presented with a dropdown menu that 
+# offers a selection of options. For instance, if a user chooses "General Weather Forecast," 
+# they will be directed to a forecast page where they can enter a zip code to retrieve the current
+# weather information. To enhance user navigation, a back button route has been implemented, 
+# allowing users to easily return to the homepage and choose a different option.  this website aims 
+# to expand its coverage by incorporating additional Disaster Weather information such as tornadoes,
+# high temperature warnings, and wildfires. By including these additional features, the website will 
+# offer a more comprehensive and diverse range of information to its users. This expansion will ensure 
+# that users can access relevant and timely data related to various weather-related disasters, thereby 
+# enhancing their overall experience and keeping them better informed.
+
+# Each team name is included on the coded they worked on. 
+
+
+
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_bootstrap import Bootstrap5
 from forecast import ZipcodeForm, getForecastData
@@ -6,8 +27,6 @@ import urllib.request, json
 import json
 import os
 import requests
-#CST205 Project Final
-# By Ruben Tafoya, Dylan Uribe, Aurelio Lopez, and Jason Kim
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
@@ -72,6 +91,8 @@ def forecastview():
 
 ### Function for Earthquakes
 # By Aurelio Lopez
+
+
 @app.route('/earthquakes', methods=['GET', 'POST'])
 def earthquakes():
     start_date = '2023-05-01'
@@ -83,6 +104,8 @@ def earthquakes():
     response = requests.get(url)
     data = response.json()
     # print(data)
+
+
 
     earthquakes = []
     features = data.get('features', [])
@@ -116,7 +139,8 @@ def handle_selection():
 
     return redirect(url_for('home'))
 
-
+# Air quality
+# By Jason Kim
 
 @app.route('/Air')
 def Air(): 
