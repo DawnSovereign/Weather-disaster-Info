@@ -8,22 +8,28 @@
     <link rel="stylesheet" type="text/css" href="../static/css/fstyle.css" />
     <title>Forcast</title>
   </head>
-  <body >
-    <div class= "bg-image"></div>
-    <div class = "bg-overlay"></div>
-    <h1 class = " container rounded w-75 bg-white">Enter your zipcode to find your current weather!</h1>
+  <body>
+    <div class="bg-image"></div>
+    <div class="bg-overlay"></div>
+    <br />
+    <h1 class="container rounded w-75 bg-white">
+      Enter your zipcode to find your current weather!
+    </h1>
     <div class="container mb-4">
       <div class="card mt-4">
         <div class="card-body">
-          <h2 class="card-title">
-            Search! 
-          </h2>
+          <h2 class="card-title">Search!</h2>
           <form method="POST" action="/forecast">
-        <!-- Hint for future, make sure to change the action to the page that processes the form validation -->
+            <!-- Hint for future, make sure to change the action to the page that processes the form validation -->
             {{ form.csrf_token }} {{ form.user_zip.label }} {{
             form.user_zip(size=32) }}
             <input type="submit" value="Submit Button" />
           </form>
+          <a href="{{ url_for('home') }}">
+            <button type="button" class="backbutton" style="margin-top: 5vh">
+              Back Home
+            </button>
+          </a>
         </div>
       </div>
     </div>

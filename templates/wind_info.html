@@ -1,38 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wind Information</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
-</head>
-<body>
+    {{bootstrap.load_css()}}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='wind_styles.css') }}"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Wind Information for {{ weather_data.location.name }}</h1>
-        <hr>
-        <br>
+      <h1 style="margin-top: 5vh;">Wind Information for {{ weather_data.location.name }}</h1>
+      <hr />
+      <br />
     </header>
     <form id="windCity">
-        <input type="button" value="Go back!" onclick="history.back()">
+      <input type="button" value="Go back!" onclick="history.back()" />
     </form>
-    <hr>
-    <h3>Wind speed: {{ weather_data.current.wind_speed }} {{ weather_data.current.wind_dir }}</h3>
-    <h3>Wind direction: {{ weather_data.current.wind_dir }}</h3>
-    <h3>Pressure: {{ weather_data.current.pressure }}</h3>
-    <h3>Wind degree: {{ weather_data.current.wind_degree }}</h3>
-    <h3>Weather description: {{ weather_data.current.weather_descriptions[0] }}</h3>
-    <img class="weather-icon" src="{{ weather_data.current.weather_icons[0] }}" alt="Weather icon">
+    <br />
+    <div class="centered">
+      <div
+        class="card"
+        style="width: 30rem; background-color: #333; color: white"
+      >
+        <div class="card-body">
+          <h3>
+            Wind speed: {{ weather_data.current.wind_speed }} {{
+            weather_data.current.wind_dir }}
+          </h3>
+          <h3>Wind direction: {{ weather_data.current.wind_dir }}</h3>
+          <h3>Pressure: {{ weather_data.current.pressure }}</h3>
+          <h3>Wind degree: {{ weather_data.current.wind_degree }}</h3>
+          <h3>
+            Weather description: {{ weather_data.current.weather_descriptions[0]
+            }}
+          </h3>
+          <img
+            class="weather-icon"
+            src="{{ weather_data.current.weather_icons[0] }}"
+            alt="Weather icon"
+          />
+        </div>
+      </div>
+    </div>
     <footer>
-        <hr>
-        <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}">
-        <p>CST205  Multimedia Design & Programming. 2023Ⓒ
-          <br><strong>Disclaimer: </strong>
-          The information in this webpage is fictitious.
-          <br>
-          It is used for academic purposes only.
-        </p>
-      </footer>
-</body>
+      <hr />
+      <img
+        id="logo"
+        width="200"
+        src="{{ url_for('static', filename='csumblogo.png') }}"
+      />
+      <p>
+        CST205 Multimedia Design & Programming. 2023Ⓒ <br /><strong
+          >Disclaimer:
+        </strong>
+        The information in this webpage is fictitious.
+        <br />
+        It is used for academic purposes only.
+      </p>
+    </footer>
+  </body>
 </html>

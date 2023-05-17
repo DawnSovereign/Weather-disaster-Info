@@ -6,6 +6,8 @@ import urllib.request, json
 import json
 import os
 import requests
+#CST205 Project Final
+# By Ruben Tafoya, Dylan Uribe, Aurelio Lopez, and Jason Kim
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
@@ -14,13 +16,15 @@ app = Flask(__name__)
 bootstrap = Bootstrap5(app)
 app.config['SECRET_KEY'] = 'csumb-otter'
 
-current_weather_api = '7c66fb6dc5b98966d3c9709307417f82'
 forecastinfo = None
 
+###Functons for homepage
+# By Ruben Tafoya
 @app.route('/')
 def home():
     return render_template("home.html")
 ### Functions for wind
+# By Ruben Tafoya 
 @app.route('/wind', methods=['GET', 'POST'])
 def wind():
     if request.method == 'POST':
@@ -40,7 +44,8 @@ def wind_info():
 
     return render_template("wind_info.html", weather_data=weather_data)
 
-## FUNCTIONS FOR FORECAST VIEW
+### Functions for forecast view
+# By Dylan Uribe
 @app.route('/forecast', methods = ['GET', 'POST'])
 def forecast():
     form = ZipcodeForm()
@@ -65,15 +70,13 @@ def forecastview():
         return render_template('forecastView.html', forecastinfo = forecastinfo)
     # return render_template('forecastView.html', forecastinfo = forecastinfo)
 
-
+### Function for Earthquakes
+# By Aurelio Lopez
 @app.route('/earthquakes', methods=['GET', 'POST'])
 def earthquakes():
     start_date = '2023-05-01'
     end_date = '2023-05-09'
     magnitude = '4'
-    # start_date = request.args.get('start_date')
-    # end_date = request.args.get('end_date')
-    # magnitude = request.args.get('magnitude')
     url = f'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date}&endtime={end_date}&minmagnitude={magnitude}'
 
 
@@ -94,6 +97,8 @@ def earthquakes():
 
     return render_template('earthquakes.html', cities=cities, magnitudes=magnitudes)
 
+### More Homepage
+# By Ruben Tafoya
 @app.route('/handle_selection', methods=['POST'])
 def handle_selection():
     selected_option = request.form.get('selected_option')
