@@ -4,7 +4,15 @@ from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired
 from pprint import pprint
+
+#By Dylan Uribe
+
+#API key for weather forecast
+
 forecast_api_key = '7c66fb6dc5b98966d3c9709307417f82'
+
+#Flask form that asks user for a zipcode
+
 class ZipcodeForm(FlaskForm):
         user_zip = StringField(
             'Enter your ZipCode:', 
@@ -34,7 +42,7 @@ def getForecastData(userinput):
         print("Error on forecast: ", e)
     return None
 
-
+# Testing purposes, run this file on its own to test the functions.
 # ans = input("Enter a zipcode ")
 # data = getForecastData(ans)
 # pprint(data)

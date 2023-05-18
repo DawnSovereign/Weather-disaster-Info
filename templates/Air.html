@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Air Quality</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+     -->
+    {{bootstrap.load_css()}}
+    <style>
+      body {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        background: #84c6e0;
+      }
+      .centered {
+        margin-top: 10vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centered">
+      <div class="container">
+        <h1>Air Quality Information</h1>
+        <form method="GET" action="{{ url_for('search') }}">
+          <div class="mb-3">
+            <label for="locationInput" class="form-label">Location</label>
+            <input
+              type="text"
+              class="form-control"
+              id="locationInput"
+              name="location"
+              placeholder="Enter location"
+              style="width: 60vw"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <br>
+        {% if data %}
+
+        <div
+          class="card"
+          style="width: 30rem; background-color: #333; color: white; margin-left: 20vw"
+        >
+          <div class="card-body" style="display:flex;justify-content: center;">
+            <div class="mt-4">
+              <h2>City: {{ data['city_name'] }}</h2>
+              <h2>Country: {{ data['country_code'] }}</h2>
+              <h2>AQI: {{ data['data'][0]['aqi'] }}</h2>
+              <h2>PM2.5: {{ data['data'][0]['pm25'] }}</h2>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <br>
+
+      <form id="windCity">
+        <input type="button" value="Go back!" onclick="history.back()" />
+      </form>
+      <br />
+    </div>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>

@@ -5,23 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wind</title>
+    {{bootstrap.load_css()}}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
 
 </head>
 <body>
 <header>
-    <h1>Enter a city to get wind information</h1>
+    <h1 style="margin-top: 5vh;">Enter a city to get wind information</h1>
     <hr>
 </header>
     <br>
+    <div class="centered">
+    <img  src="https://i.pinimg.com/originals/e5/c3/8b/e5c38bea9d7f618630821cfe339c7321.png" alt="wind symbol" style="width: 25vh; height: auto;">
+    </div>
     <form id="windCity">
         <input type="button" value="Go back!" onclick="history.back()">
        </form>
-    <hr>
+    <br>
     <div class="center-form">
         <form method="POST">
-            <input type="text" name="city" placeholder="Enter city name" required>
+            <input type="text" name="city" style="height: 28px;"placeholder="Enter city name" required>
             <br>
             <button id="restartBtn" type="submit" class="btn">Submit</button>
         </form>
