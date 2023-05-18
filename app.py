@@ -21,7 +21,7 @@
 
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_bootstrap import Bootstrap5
-from forecast import ZipcodeForm, getForecastData
+from static.forecast import ZipcodeForm, getForecastData
 import requests
 import urllib.request, json
 import json
