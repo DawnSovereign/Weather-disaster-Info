@@ -90,10 +90,12 @@ def forecastview():
         return render_template('forecastView.html', forecastinfo = forecastinfo)
     # return render_template('forecastView.html', forecastinfo = forecastinfo)
 
+
 ### Function for Earthquakes
 # By Aurelio Lopez
 @app.route('/earthquakes', methods=['GET', 'POST'])
 def earthquakes():
+    # Set start date, end date and magnitude for api
     start_date = '2023-05-01'
     end_date = '2023-05-09'
     magnitude = '4'
@@ -115,6 +117,26 @@ def earthquakes():
 
     return render_template('earthquakes.html', cities=cities, magnitudes=magnitudes)
 
+
+# Air quality
+# By Jason Kim
+@app.route('/Air')
+def Air(): 
+    return render_template('Air.html')
+
+@app.route('/search', methods=['GET'])
+def search():
+    location = request.args.get('location')
+    if location:
+        api_key = '80745c411c034e788af778b4d36e6ffa'
+        url = f"http://api.weatherbit.io/v2.0/current/airquality?key={api_key}&city={location}"
+        response = requests.get(url)
+        data = response.json()
+        return render_template('Air.html', data=data)
+    else:
+        return render_template('Air.html')
+
+
 ### More Homepage
 # By Ruben Tafoya
 @app.route('/handle_selection', methods=['POST'])
@@ -133,26 +155,3 @@ def handle_selection():
         return redirect(url_for('earthquakes'))
 
     return redirect(url_for('home'))
-
-# Air quality
-# By Jason Kim
-
-@app.route('/Air')
-def Air(): 
-    return render_template('Air.html')
-
-@app.route('/search', methods=['GET'])
-def search():
-    location = request.args.get('location')
-    if location:
-        api_key = '80745c411c034e788af778b4d36e6ffa'
-        url = f"http://api.weatherbit.io/v2.0/current/airquality?key={api_key}&city={location}"
-        response = requests.get(url)
-        data = response.json()
-        return render_template('Air.html', data=data)
-    else:
-        return render_template('Air.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
