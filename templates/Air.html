@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Air Quality</title>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-     -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> -->
     {{bootstrap.load_css()}}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- This is linking to a CSS file named "styles.css" in the static directory. -->
     <style>
       body {
         margin-left: 10vw;
@@ -60,5 +60,17 @@
       <br />
     </div>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <footer>
+      <!-- A footer that contains the CSUMB logo and disclaimer -->
+          <hr>
+          <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}" >
+          <p>CST205  Multimedia Design & Programming. 2023Ⓒ
+            <br><strong>Disclaimer: </strong>
+            The information in this webpage is fictitious.
+            <br>
+            It is used for academic purposes only.
+          </p>
+      
+      </footer>
   </body>
 </html>

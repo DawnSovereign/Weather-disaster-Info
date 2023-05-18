@@ -2,8 +2,7 @@
 # Authors: Ruben Tafoya, Dylan Uribe, Aurelio Lopez, Jason Kim 
 # Course: CST 205 - Multimedia Design & Programming
 # Date: May 17, 2023
-# Abtract: 
-# This website serves as a comprehensive destination for obtaining information about wind, hurricanes, 
+# Abtract: This website serves as a comprehensive destination for obtaining information about wind, hurricanes, 
 # earthquakes, and weather forecasts. On the homepage, users are presented with a dropdown menu that 
 # offers a selection of options. For instance, if a user chooses "General Weather Forecast," 
 # they will be directed to a forecast page where they can enter a zip code to retrieve the current
@@ -54,6 +53,7 @@ def wind():
 
 @app.route('/wind_info')
 def wind_info():
+    # Define the API key for weatherstack API
     api_key = '41d5f679408f743b97da7258b9457d56'
     city = request.args.get('city', 'New York')
     units = 'f'
@@ -61,6 +61,7 @@ def wind_info():
     response = requests.get(url)
     weather_data = response.json()
 
+    # Renders the 'wind_info.html' template, passing 'weather_data' as context
     return render_template("wind_info.html", weather_data=weather_data)
 
 ### Functions for forecast view

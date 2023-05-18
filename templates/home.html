@@ -8,8 +8,6 @@
     {{bootstrap.load_css()}}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}">
-    <!-- <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
     <style>
         body{
             margin-left: 10vw;
@@ -32,6 +30,7 @@
     <form action="{{ url_for('handle_selection') }}" method="POST">
         <label for="weather-options">Select an option:</label>
         <select id="weather-options" name="selected_option">
+            <!-- Dropdown for user to select an option -->
             <option value="">Select...</option>
             <option value="wind">Wind</option>
             <option value="air_quality">Air Quality</option>
@@ -39,12 +38,14 @@
             <option value="weather_forecast">General Weather Forecast</option>
         </select>
         <button id="restartBtn" value="submit" type="submit" class="btn">Submit</button>
+        <!-- Submit button for the form -->
     </form>
 </div>
 </main>
 <div class="centered">
 
 <footer>
+<!-- A footer that contains the CSUMB logo and disclaimer -->
     <hr>
     <img id="logo" width="200" src="{{ url_for('static', filename='csumblogo.png') }}" >
     <p>CST205  Multimedia Design & Programming. 2023Ⓒ
