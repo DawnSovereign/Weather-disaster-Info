@@ -14,7 +14,7 @@
 # that users can access relevant and timely data related to various weather-related disasters, thereby 
 # enhancing their overall experience and keeping them better informed.
 
-# Each team name is included on the coded they worked on. 
+# Each team name is included on the code they worked on. 
 
 
 
@@ -92,21 +92,15 @@ def forecastview():
 
 ### Function for Earthquakes
 # By Aurelio Lopez
-
-
 @app.route('/earthquakes', methods=['GET', 'POST'])
 def earthquakes():
     start_date = '2023-05-01'
     end_date = '2023-05-09'
     magnitude = '4'
     url = f'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date}&endtime={end_date}&minmagnitude={magnitude}'
-
-
     response = requests.get(url)
     data = response.json()
     # print(data)
-
-
 
     earthquakes = []
     features = data.get('features', [])
