@@ -20,16 +20,19 @@
   </head>
   <body>
     <div style="margin-left: -5vw">
+      <!-- used url_for for back button, take back to home page -->
       <a href="{{ url_for('home') }}"
         ><button type="button" class="backbutton">Back Home</button></a
       >
     </div>
-
     <div class="mag">
+      <!-- Title of homepage -->
       <h1>Welcome to Earthquake Magnitude Search!</h1>
       <form action="/earthquakes" method="GET" class="form"></form>
     </div>
+    <!--  -->
     <div>
+      <!-- Loop through cities and magnitudes to generate table rows -->
       {% if cities %}
       <h2 class="result">Search Results</h2>
       <table>
