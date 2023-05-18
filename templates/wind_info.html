@@ -6,14 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wind Information</title>
     {{bootstrap.load_css()}}
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='wind_styles.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- This is linking to a CSS file named "styles.css" in the static directory. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='wind_styles.css') }}"> <!-- This is linking to a CSS file named "wind_styles.css" in the static directory. -->
   </head>
   <body>
     <header>
@@ -51,6 +45,7 @@
       </div>
     </div>
     <footer>
+     <!-- A footer that contains the CSUMB logo and disclaimer -->
       <hr />
       <img
         id="logo"
