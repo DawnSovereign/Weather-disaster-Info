@@ -10,6 +10,8 @@ This website serves as a comprehensive destination for obtaining information abo
 Link to github: https://github.com/alopezCSUMB/CST205_Final_Project
 ###
 Link to Trello board: https://trello.com/b/MEwuGDzh/project-management
+###
+Link to Google slides: https://docs.google.com/presentation/d/1rfo4-4vX5o0oXMFFejc8RhP7J9VG5pAGDWBB54HsVlg/edit?usp=sharing 
 
 # Future work
 In a future update, this website aims to expand its coverage by incorporating additional Disaster Weather information such as tornadoes, high temperature warnings, and wildfires. By including these additional features, the website will offer a more comprehensive and diverse range of information to its users. This expansion will ensure that users can access relevant and timely data related to various weather-related disasters, thereby enhancing their overall experience and keeping them better informed. 
